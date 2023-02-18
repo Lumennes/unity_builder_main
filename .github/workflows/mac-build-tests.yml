@@ -4,7 +4,8 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main
+      - max
+      # - main
 
 env:
   UNITY_LICENSE:
@@ -34,7 +35,7 @@ env:
 
 jobs:
   buildForAllPlatformsWindows:
-    name: Build for ${{ matrix.targetPlatform }} on version ${{ matrix.unityVersion }}
+    name: ${{ matrix.targetPlatform }} ${{ matrix.unityVersion }}
     runs-on: macos-latest
     strategy:
       fail-fast: false
